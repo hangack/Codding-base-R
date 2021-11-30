@@ -1,0 +1,8 @@
+loan_status: 연체
+loan_amnt: 대출금
+grade: 등급
+home_ownership: 거주 형태
+annual_income: 연봉
+age: 나이
+emp_cat: 경력
+ir_cat: 이율

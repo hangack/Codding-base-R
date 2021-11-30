@@ -1,6 +1,6 @@
 # pakage CRAN 내려받기
 # install.packages("tidyverse", dependencies = TRUE)
-# install.packages("lubridate", dependencies = TRUE)
+# install.packages("randomForest", dependencies = TRUE)
 
 library(tidyverse)
 library(lubridate)
