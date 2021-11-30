@@ -128,6 +128,8 @@ ggplot(data = diamonds) +
     fun = median
   )
 
+glimpse(diamonds)
+
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, y = after_stat(prop)))
 ggplot(data = diamonds) + 
@@ -151,6 +153,16 @@ ggplot(data = diamonds) +
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
 
+bar <- ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = cut), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1) +
+  labs(x = NULL, y = NULL)
 
+bar + coord_flip()
+bar + coord_polar()
 
-
+library(ggplot2)

@@ -1,0 +1,121 @@
+---
+title: "R 기본변수"
+author: "hangack"
+date: '2021 12 01 '
+output: 
+  html_document:
+    keep_md: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+https://bookdown.org/yihui/rmarkdown/html-document.html
+
+
+Rmd(R markdown) 환경에서 재작업했다.
+
+R Script는 코드만 입력하면 된다
+
+`Ctrl+Alt+I`로 {r} 코드 블럭 형식을 바로 삽입할 수 있다.
+
+
+
+
+
+## 변수에 값 할당
+
+프로그래밍 언어에서 변수에 값을 할당한다면 보통 `=`을 사용한다. R에서도 사용할 수 있지만, `R` 문법을 소개하는 책(혹은 page)에서는 `<-`도 자주 사용될 것이다.
+
+
+```{r}
+a <- 1    ## R만의 특수한 문법이다.
+b = 1
+```
+
+```{r}
+print(a)
+print(b)
+```
+
+## 변수 제거
+
+변수 할당을 했으니 변수 제거도 해봐지
+
+```{r}
+rm(a)
+print(a)
+```
+
+
+
+
+## 데이터 타입
+
+ - numeric(수치형)
+ - character(문자형)
+ - logical(논리형)
+ 
+을 베이스로 실수, 복소수, NaN 등 세부항목을 나눌 수 있다.
+
+```{r}
+my_num = 42
+my_char = "hello"
+my_logis = TRUE
+```
+```{r}
+class(my_num)
+class(my_char)
+class(my_logis)
+```
+
+## 집합
+
+데이터를 묶어주는 1차원 집합이다.
+ - 1d: vector
+ - 2d: Matrix
+ - 3d: array
+ 
+나중에 R을 많이 쓴다면 다차원 집합을 추가로 다루겠다.
+절대 내가 귀찮아서다.
+
+
+### vector
+
+```{r}
+num_vector = c(1,2,3)
+char_vector = c('a','b','c')
+logi_vector = c(TRUE,FALSE,TRUE)
+```
+```{r}
+class(num_vector)
+class(char_vector)
+class(logi_vector)
+```
+c: combine의 약자
+
+
+### 다변수 집합의 강제 형변환
+
+집합은 동일한 타입만 입력받는 객체이기 때문에 여러 데이터 타입을 입력하면 강제 형변환이 진행된다.
+```{r}
+temp_a = c(1,'2',3)
+temp_a
+class(temp_a) ## 문자로 강제 형변환
+
+temp_b = c(1,TRUE, FALSE)
+temp_b
+class(temp_b) ## 숫자로 강제 형변환
+
+temp_c = c("TRUE",TRUE, FALSE, 100)
+temp_c
+class(temp_c) ## 문자로 강제 형변환
+```
+
+강제 형변환 우선순위는 다음과 같다.
+ - 문자 > 숫자 > 논리
+
+
+
